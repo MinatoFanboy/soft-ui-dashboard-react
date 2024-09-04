@@ -4,34 +4,24 @@ import boxShadows from '../../base/boxShadows';
 
 import pxToRem from '../../functions/pxToRem';
 
-const { info, secondary, text, white } = colors;
+const { info, light, secondary, transparent } = colors;
 const { size } = typography;
 const { buttonBoxShadow } = boxShadows;
 
-const contained = {
+const outlined = {
     base: {
-        backgroundColor: white.main,
-        minHeight: pxToRem(40),
-        color: text.main,
-        boxShadow: buttonBoxShadow.main,
+        minHeight: pxToRem(42),
+        color: light.main,
+        border: light.main,
         padding: `${pxToRem(12)} ${pxToRem(24)}`,
 
         '&:hover': {
-            backgroundColor: white.main,
-            boxShadow: buttonBoxShadow.stateOf,
+            backgroundColor: transparent.main,
+            opacity: 0.75,
         },
 
-        '&:focus': {
-            boxShadow: buttonBoxShadow.stateOf,
-        },
-
-        '&:active, &:active:focus, &:active:hover': {
-            opacity: 0.85,
-            boxShadow: buttonBoxShadow.stateOf,
-        },
-
-        '&:disabled': {
-            boxShadow: buttonBoxShadow.main,
+        '&:focus:not(:hover)': {
+            boxShadow: buttonBoxShadow.stateOfNotHover,
         },
 
         '& .material-icon, .material-icon-round, svg': {
@@ -40,8 +30,8 @@ const contained = {
     },
 
     small: {
-        minHeight: pxToRem(32),
-        padding: `${pxToRem(14)} ${pxToRem(32)}`,
+        minHeight: pxToRem(34),
+        padding: `${pxToRem(8)} ${pxToRem(32)}`,
         fontSize: size.xs,
 
         '& .material-icon, .material-icon-round, svg': {
@@ -50,7 +40,7 @@ const contained = {
     },
 
     large: {
-        minHeight: pxToRem(47),
+        minHeight: pxToRem(49),
         padding: `${pxToRem(14)} ${pxToRem(64)}`,
         fontSize: size.sm,
 
@@ -60,30 +50,30 @@ const contained = {
     },
 
     primary: {
-        backgroundColor: info.main,
+        backgroundColor: transparent.main,
+        borderColor: info.main,
 
         '&:hover': {
-            backgroundColor: info.main,
+            backgroundColor: transparent.main,
         },
 
         '&:focus:not(:hover)': {
-            backgroundColor: info.focus,
             boxShadow: buttonBoxShadow.stateOfNotHover,
         },
     },
 
     secondary: {
-        backgroundColor: secondary.main,
+        backgroundColor: transparent.main,
+        borderColor: secondary.main,
 
         '&:hover': {
-            backgroundColor: secondary.main,
+            backgroundColor: transparent.main,
         },
 
         '&:focus:not(:hover)': {
-            backgroundColor: secondary.focus,
             boxShadow: buttonBoxShadow.stateOfNotHover,
         },
     },
 };
 
-export default contained;
+export default outlined;
