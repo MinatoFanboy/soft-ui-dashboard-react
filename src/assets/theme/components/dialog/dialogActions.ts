@@ -1,27 +1,12 @@
-import borders from '../../base/borders';
-import colors from '../../base/colors';
-import boxShadows from '../../base/boxShadows';
-import rgba from '../../functions/rgba';
+// Soft UI Dashboard React helper functions
+import pxToRem from '../../functions/pxToRem';
 
-const { black, white } = colors;
-const { borderWidth, borderRadius } = borders;
-const { xxl } = boxShadows;
-
-const card = {
+const dialogActions = {
     styleOverrides: {
         root: {
-            display: 'flex',
-            flexDirection: 'column',
-            position: 'relative',
-            minWidth: 0,
-            wordWrap: 'break-word',
-            backgroundColor: white.main,
-            backgroundClip: 'border-box',
-            border: `${borderWidth[0]} solid ${rgba(black.main, 0.125)}`,
-            borderRadius: borderRadius.xl,
-            boxShadow: xxl,
+            padding: pxToRem(16),
         },
     },
 };
 
-export default card;
+export default dialogActions;

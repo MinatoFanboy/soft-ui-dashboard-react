@@ -1,6 +1,9 @@
+// Soft UI Dashboard React base styles
+import colors from '../../base/colors';
 import borders from '../../base/borders';
 import boxShadows from '../../base/boxShadows';
-import colors from '../../base/colors';
+
+// Soft UI Dashboard React helper functions
 import pxToRem from '../../functions/pxToRem';
 
 const { grey, white } = colors;
@@ -10,7 +13,7 @@ const { tabsBoxShadow } = boxShadows;
 const tabs = {
     styleOverrides: {
         root: {
-            position: 'relative',
+            position: 'relative' as const,
             backgroundColor: grey[100],
             borderRadius: borderRadius.lg,
             minHeight: 'unset',
@@ -19,13 +22,15 @@ const tabs = {
 
         flexContainer: {
             height: '100%',
-            position: 'relative',
+            position: 'relative' as const,
             zIndex: 10,
         },
 
         fixed: {
-            overflow: 'unset !important',
-            overflowX: 'unset !important',
+            overflow: 'unset' as const,
+            WebkitOverflow: 'unset' as const,
+            overflowX: 'unset' as const,
+            WebkitOverflowX: 'unset' as const,
         },
 
         vertical: {

@@ -1,25 +1,27 @@
-import { createTheme, PaletteOptions } from '@mui/material';
-import { TypographyOptions } from '@mui/material/styles/createTypography';
+// @mui material components
+import { createTheme } from '@mui/material/styles';
 
-import borders from './base/borders';
-import boxShadows from './base/boxShadows';
-import breakpoints from './base/breakpoints';
+// Soft UI Dashboard React base styles
 import colors from './base/colors';
+import breakpoints from './base/breakpoints';
 import typography from './base/typography';
+import boxShadows from './base/boxShadows';
+import borders from './base/borders';
+import globals from './base/globals';
+
+// Soft UI Dashboard React helper functions
 import boxShadow from './functions/boxShadow';
 import hexToRgb from './functions/hexToRgb';
 import linearGradient from './functions/linearGradient';
 import pxToRem from './functions/pxToRem';
 import rgba from './functions/rgba';
-import globals from './base/globals';
-import container from './components/container';
+
+// Soft UI Dashboard React components base styles for @mui material components
 import sidenav from './components/sidenav';
 import list from './components/list';
 import listItem from './components/list/listItem';
 import listItemText from './components/list/listItemText';
 import card from './components/card';
-import cardMedia from './components/card/cardMedia';
-import cardContent from './components/card/cardContent';
 import button from './components/button';
 import iconButton from './components/iconButton';
 import inputBase from './components/form/inputBase';
@@ -50,16 +52,276 @@ import checkbox from './components/form/checkbox';
 import radio from './components/form/radio';
 import autocomplete from './components/form/autocomplete';
 import input from './components/form/input';
+import container from './components/container';
 import popover from './components/popover';
 import buttonBase from './components/buttonBase';
 import icon from './components/icon';
-import svgIcon from './components/svgIcon';
 import link from './components/link';
+import svgIcon from './components/svgIcon';
+
+declare module '@mui/material/styles' {
+    interface Palette {
+        black: {
+            main: string;
+            focus: string;
+        };
+
+        white: {
+            main: string;
+            focus: string;
+        };
+
+        light: {
+            main: string;
+            focus: string;
+        };
+
+        dark: {
+            main: string;
+            focus: string;
+        };
+
+        transparent: {
+            main: string;
+        };
+
+        gradients: {
+            primary: {
+                main: string;
+                state: string;
+            };
+
+            secondary: {
+                main: string;
+                state: string;
+            };
+
+            info: {
+                main: string;
+                state: string;
+            };
+
+            success: {
+                main: string;
+                state: string;
+            };
+
+            warning: {
+                main: string;
+                state: string;
+            };
+
+            error: {
+                main: string;
+                state: string;
+            };
+
+            light: {
+                main: string;
+                state: string;
+            };
+
+            dark: {
+                main: string;
+                state: string;
+            };
+        };
+    }
+
+    interface PaletteOptions {
+        black?: {
+            main: string;
+            focus: string;
+        };
+
+        white?: {
+            main: string;
+            focus: string;
+        };
+
+        dark?: {
+            main: string;
+            focus: string;
+        };
+
+        light?: {
+            main: string;
+            focus: string;
+        };
+
+        transparent?: {
+            main: string;
+        };
+
+        gradients?: {
+            primary: {
+                main: string;
+                state: string;
+            };
+
+            secondary: {
+                main: string;
+                state: string;
+            };
+
+            info: {
+                main: string;
+                state: string;
+            };
+
+            success: {
+                main: string;
+                state: string;
+            };
+
+            warning: {
+                main: string;
+                state: string;
+            };
+
+            error: {
+                main: string;
+                state: string;
+            };
+
+            light: {
+                main: string;
+                state: string;
+            };
+
+            dark: {
+                main: string;
+                state: string;
+            };
+        };
+    }
+
+    interface TypeText {
+        main?: string;
+        focus?: string;
+    }
+
+    interface TypographyOptions {
+        lineHeight?: number;
+    }
+
+    interface Theme {
+        boxShadows: {
+            xs: string;
+            sm: string;
+            md: string;
+            lg: string;
+            xl: string;
+            xxl: string;
+            inset: string;
+            navbarBoxShadow: string;
+            buttonBoxShadow: {
+                main: string;
+                stateOf: string;
+                stateOfNotHover: string;
+            };
+            inputBoxShadow: {
+                focus: string;
+                error: string;
+                success: string;
+            };
+            sliderBoxShadow: {
+                thumb: string;
+            };
+            tabsBoxShadow: {
+                indicator: string;
+            };
+        };
+        borders: {
+            borderColor: string;
+            borderWidth: {
+                0: number;
+                1: string;
+                2: string;
+                3: string;
+                4: string;
+                5: string;
+            };
+            borderRadius: {
+                xs: string;
+                sm: string;
+                md: string;
+                lg: string;
+                xl: string;
+                xxl: string;
+                section: string;
+            };
+        };
+        functions: {
+            boxShadow: (offset: number[], radius: number[], color: string, opacity: number, inset?: string) => string;
+            hexToRgb: (color: string) => string;
+            linearGradient: (color: string, colorState: string, angle?: number) => string;
+            pxToRem: (number: number, baseNumber?: number) => string;
+            rgba: (color: string, opacity: number) => string;
+        };
+    }
+
+    interface ThemeOptions {
+        boxShadows?: {
+            xs: string;
+            sm: string;
+            md: string;
+            lg: string;
+            xl: string;
+            xxl: string;
+            inset: string;
+            navbarBoxShadow: string;
+            buttonBoxShadow: {
+                main: string;
+                stateOf: string;
+                stateOfNotHover: string;
+            };
+            inputBoxShadow: {
+                focus: string;
+                error: string;
+                success: string;
+            };
+            sliderBoxShadow: {
+                thumb: string;
+            };
+            tabsBoxShadow: {
+                indicator: string;
+            };
+        };
+        borders?: {
+            borderColor: string;
+            borderWidth: {
+                0: number;
+                1: string;
+                2: string;
+                3: string;
+                4: string;
+                5: string;
+            };
+            borderRadius: {
+                xs: string;
+                sm: string;
+                md: string;
+                lg: string;
+                xl: string;
+                xxl: string;
+                section: string;
+            };
+        };
+        functions?: {
+            boxShadow: (offset: number[], radius: number[], color: string, opacity: number, inset?: string) => string;
+            hexToRgb: (color: string) => string;
+            linearGradient: (color: string, colorState: string, angle?: number) => string;
+            pxToRem: (number: number, baseNumber?: number) => string;
+            rgba: (color: string, opacity: number) => string;
+        };
+    }
+}
 
 export default createTheme({
     breakpoints: { ...breakpoints },
-    palette: { ...(colors as PaletteOptions) },
-    typography: { ...(typography as TypographyOptions) },
+    palette: { ...colors },
+    typography: { ...typography },
     boxShadows: { ...boxShadows },
     borders: { ...borders },
     functions: {
@@ -81,27 +343,25 @@ export default createTheme({
         MuiList: { ...list },
         MuiListItem: { ...listItem },
         MuiListItemText: { ...listItemText },
-        MuiCard: { ...(card as any) },
-        MuiCardMedia: { ...cardMedia },
-        MuiCardContent: { ...cardContent },
-        MuiButton: { ...(button as any) },
+        MuiCard: { ...card },
+        MuiButton: { ...button },
         MuiIconButton: { ...iconButton },
-        MuiInputBase: { ...(inputBase as any) },
-        MuiMenu: { ...(menu as any) },
+        MuiInputBase: { ...inputBase },
+        MuiMenu: { ...menu },
         MuiMenuItem: { ...menuItem },
         MuiSwitch: { ...switchButton },
         MuiDivider: { ...divider },
         MuiTableContainer: { ...tableContainer },
         MuiTableHead: { ...tableHead },
         MuiTableCell: { ...tableCell },
-        MuiLinearProgress: { ...(linearProgress as any) },
+        MuiLinearProgress: { ...linearProgress },
         MuiBreadcrumbs: { ...breadcrumbs },
-        MuiSlider: { ...(slider as any) },
+        MuiSlider: { ...slider },
         MuiAvatar: { ...avatar },
-        MuiTooltip: { ...(tooltip as any) },
-        MuiAppBar: { ...(appBar as any) },
-        MuiTabs: { ...(tabs as any) },
-        MuiTab: { ...(tab as any) },
+        MuiTooltip: { ...tooltip },
+        MuiAppBar: { ...appBar },
+        MuiTabs: { ...tabs },
+        MuiTab: { ...tab },
         MuiStepper: { ...stepper },
         MuiStep: { ...step },
         MuiStepConnector: { ...stepConnector },
@@ -112,14 +372,14 @@ export default createTheme({
         MuiFormLabel: { ...formLabel },
         MuiCheckbox: { ...checkbox },
         MuiRadio: { ...radio },
-        MuiAutocomplete: { ...(autocomplete as any) },
+        MuiAutocomplete: { ...autocomplete },
         MuiInput: { ...input },
         MuiOutlinedInput: { ...input },
         MuiFilledInput: { ...input },
         MuiPopover: { ...popover },
         MuiButtonBase: { ...buttonBase },
-        MuiIcon: { ...(icon as any) },
-        MuiSvgIcon: { ...(svgIcon as any) },
-        MuiLink: { ...(link as any) },
+        MuiIcon: { ...icon },
+        MuiLink: { ...link },
+        MuiSvgIcon: { ...svgIcon },
     },
 });

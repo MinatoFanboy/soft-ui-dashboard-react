@@ -1,9 +1,10 @@
+// Soft UI Dashboard React helper functions
 import pxToRem from '../functions/pxToRem';
 
 const icon = {
     defaultProps: {
         baseClassName: 'material-icons-round',
-        fontSize: 'inherit',
+        fontSize: 'inherit' as const,
     },
 
     styleOverrides: {

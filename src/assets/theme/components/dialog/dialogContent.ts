@@ -1,6 +1,9 @@
+// Soft UI Dashboard React base styles
+import typography from '../../base/typography';
 import borders from '../../base/borders';
 import colors from '../../base/colors';
-import typography from '../../base/typography';
+
+// Soft UI Dashboard React helper functions
 import pxToRem from '../../functions/pxToRem';
 
 const { size } = typography;

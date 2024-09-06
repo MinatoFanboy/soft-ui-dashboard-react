@@ -1,5 +1,7 @@
 const colors = {
-    background: '#F8F9FA',
+    background: {
+        default: '#F8F9FA',
+    },
 
     text: {
         main: '#67748E',
@@ -8,6 +10,7 @@ const colors = {
 
     transparent: {
         main: 'transparent',
+        focus: 'transparent',
     },
 
     white: {
@@ -28,11 +31,11 @@ const colors = {
 
     secondary: {
         main: '#8392AB',
-        focus: '#96A28B',
+        focus: '#96A2B8',
     },
 
     info: {
-        main: '#17C18E',
+        main: '#17C1E8',
         focus: '#3ACAEB',
     },
 
@@ -43,7 +46,7 @@ const colors = {
 
     warning: {
         main: '#FBCF33',
-        focus: '#FCD652',
+        focus: '#FCB652',
     },
 
     error: {
@@ -127,8 +130,8 @@ const colors = {
         },
 
         instagram: {
-            main: '#125588',
-            dark: '#0E456D',
+            main: '#125688',
+            dark: '#0e456d',
         },
 
         linkedin: {
@@ -168,7 +171,7 @@ const colors = {
 
         reddit: {
             main: '#FF4500',
-            dark: '#E0D300',
+            dark: '#E03D00',
         },
 
         tumblr: {

@@ -1,10 +1,12 @@
+// Soft UI Dashboard React Base Styles
 import colors from '../../base/colors';
 import typography from '../../base/typography';
 import boxShadows from '../../base/boxShadows';
 
+// Soft UI Dashboard React Helper Functions
 import pxToRem from '../../functions/pxToRem';
 
-const { info, secondary, text, white } = colors;
+const { white, text, info, secondary } = colors;
 const { size } = typography;
 const { buttonBoxShadow } = boxShadows;
 
@@ -34,17 +36,17 @@ const contained = {
             boxShadow: buttonBoxShadow.main,
         },
 
-        '& .material-icon, .material-icon-round, svg': {
+        '& .material-icon, .material-icons-round, svg': {
             fontSize: `${pxToRem(16)} !important`,
         },
     },
 
     small: {
         minHeight: pxToRem(32),
-        padding: `${pxToRem(14)} ${pxToRem(32)}`,
+        padding: `${pxToRem(8)} ${pxToRem(32)}`,
         fontSize: size.xs,
 
-        '& .material-icon, .material-icon-round, svg': {
+        '& .material-icon, .material-icons-round, svg': {
             fontSize: `${pxToRem(12)} !important`,
         },
     },
@@ -54,7 +56,7 @@ const contained = {
         padding: `${pxToRem(14)} ${pxToRem(64)}`,
         fontSize: size.sm,
 
-        '& .material-icon, .material-icon-round, svg': {
+        '& .material-icon, .material-icons-round, svg': {
             fontSize: `${pxToRem(22)} !important`,
         },
     },

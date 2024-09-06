@@ -1,3 +1,4 @@
+// Soft UI Dashboard React base styles
 import borders from '../../base/borders';
 import boxShadows from '../../base/boxShadows';
 

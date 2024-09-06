@@ -1,6 +1,6 @@
 const link = {
     defaultProps: {
-        underline: 'none',
+        underline: 'none' as const,
         color: 'inherit',
     },
 };

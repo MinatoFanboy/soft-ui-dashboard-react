@@ -15,8 +15,9 @@ import Office from './examples/Icons/Office';
 import Settings from './examples/Icons/Settings';
 import Shop from './examples/Icons/Shop';
 import SpaceShip from './examples/Icons/SpaceShip';
+import { IRoute } from './types';
 
-const routes = [
+const routes: IRoute[] = [
     {
         type: 'collapse',
         name: 'Dashboard',

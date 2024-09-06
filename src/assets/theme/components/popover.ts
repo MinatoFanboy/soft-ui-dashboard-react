@@ -1,7 +1,10 @@
-import borders from '../base/borders';
-import boxShadows from '../base/boxShadows';
-import colors from '../base/colors';
-import pxToRem from '../functions/pxToRem';
+// Soft UI Dashboard React helper functions
+import pxToRem from '..//functions/pxToRem';
+
+// Soft UI Dashboard React base styles
+import colors from '..//base/colors';
+import boxShadows from '..//base/boxShadows';
+import borders from '..//base/borders';
 
 const { transparent } = colors;
 const { lg } = boxShadows;

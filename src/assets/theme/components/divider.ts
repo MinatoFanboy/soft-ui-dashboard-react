@@ -1,6 +1,9 @@
+// Soft UI Dashboard React base styles
 import colors from '../base/colors';
-import pxToRem from '../functions/pxToRem';
+
+// Soft UI Dashboard React helper functions
 import rgba from '../functions/rgba';
+import pxToRem from '../functions/pxToRem';
 
 const { dark, transparent, white } = colors;
 

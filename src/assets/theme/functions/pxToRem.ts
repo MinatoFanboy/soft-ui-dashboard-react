@@ -1,5 +1,5 @@
-const pxToRem = (number: number, baseNumber: number = 16) => {
-    return `${number / baseNumber}rem`;
-};
+function pxToRem(number: number, baseNumber?: number) {
+    return `${number / (baseNumber || 16)}rem`;
+}
 
 export default pxToRem;

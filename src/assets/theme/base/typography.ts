@@ -1,4 +1,7 @@
+// Soft UI Dashboard React Base Styles
 import colors from './colors';
+
+// Soft UI Dashboard React Helper Functions
 import pxToRem from '../functions/pxToRem';
 
 const { dark } = colors;
@@ -97,7 +100,7 @@ const typography = {
     body2: {
         fontFamily: baseProperties.fontFamily,
         fontSize: baseProperties.fontSizeMD,
-        fontWeight: baseProperties.fontWeightBold,
+        fontWeight: baseProperties.fontWeightRegular,
         lineHeight: 1.6,
     },
 
@@ -106,7 +109,7 @@ const typography = {
         fontSize: baseProperties.fontSizeSM,
         fontWeight: baseProperties.fontWeightBold,
         lineHeight: 1.5,
-        textTransform: 'uppercase',
+        textTransform: 'uppercase' as const,
     },
 
     caption: {

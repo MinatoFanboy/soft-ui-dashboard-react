@@ -1,5 +1,8 @@
-import borders from '../../base/borders';
-import pxToRem from '../../functions/pxToRem';
+// Soft UI Dashboard React Base Styles
+import borders from '../..//base/borders';
+
+// Soft UI Dashboard React Helper Functions
+import pxToRem from '../..//functions/pxToRem';
 
 const { borderRadius } = borders;
 

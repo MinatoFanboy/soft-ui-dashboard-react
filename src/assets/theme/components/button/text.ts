@@ -1,8 +1,11 @@
+// Soft UI Dashboard React Base Styles
 import colors from '../../base/colors';
-import pxToRem from '../../functions/pxToRem';
 import typography from '../../base/typography';
 
-const { grey, info, secondary, transparent } = colors;
+// Soft UI Dashboard React Helper Functions
+import pxToRem from '../../functions/pxToRem';
+
+const { transparent, info, secondary, grey } = colors;
 const { size } = typography;
 
 const buttonText = {
@@ -66,7 +69,7 @@ const buttonText = {
 
         '&:focus:not(:hover)': {
             color: info.focus,
-            backgroundColor: undefined,
+            backgroundColor: transparent.focus,
             boxShadow: 'none',
         },
     },
@@ -82,7 +85,7 @@ const buttonText = {
 
         '&:focus:not(:hover)': {
             color: secondary.focus,
-            backgroundColor: undefined,
+            backgroundColor: transparent.focus,
             boxShadow: 'none',
         },
     },

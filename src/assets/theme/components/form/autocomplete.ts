@@ -1,7 +1,10 @@
-import borders from '../../base/borders';
+// Soft UI Dashboard React base styles
 import boxShadows from '../../base/boxShadows';
-import colors from '../../base/colors';
 import typography from '../../base/typography';
+import colors from '../../base/colors';
+import borders from '../../base/borders';
+
+// Soft UI Dashboard React helper functions
 import pxToRem from '../../functions/pxToRem';
 
 const { lg } = boxShadows;
@@ -16,7 +19,7 @@ const autocomplete = {
             padding: pxToRem(8),
             fontSize: size.sm,
             color: text.main,
-            textAlign: 'left',
+            textAlign: 'left' as const,
             backgroundColor: `${white.main} !important`,
             borderRadius: borderRadius.md,
         },

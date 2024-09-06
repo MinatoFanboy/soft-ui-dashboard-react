@@ -1,5 +1,5 @@
-const linearGradient = (color: string, colorState: string, angle: number = 130) => {
-    return `linear-gradient(${angle}deg, ${color}, ${colorState})`;
-};
+function linearGradient(color: string, colorState: string, angle?: number) {
+    return `linear-gradient(${angle || 310}deg, ${color}, ${colorState})`;
+}
 
 export default linearGradient;

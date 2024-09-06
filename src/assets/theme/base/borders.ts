@@ -1,4 +1,7 @@
+// Soft UI Dashboard React Base Styles˝
 import colors from './colors';
+
+// Soft UI Dashboard React Helper Functions
 import pxToRem from '../functions/pxToRem';
 
 const { grey } = colors;

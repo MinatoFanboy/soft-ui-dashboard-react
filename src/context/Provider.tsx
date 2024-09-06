@@ -6,15 +6,15 @@ interface InitialState {
     layout: string;
     miniSideNav: boolean;
     openConfiguration: boolean;
-    sideNavColor: string;
+    sideNavColor: 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'error' | 'dark';
     transparentNav: boolean;
     transparentSideNav: boolean;
 }
 
-type Action =
+export type Action =
     | { payload: boolean; type: 'MINI_SIDE_NAV' }
     | { payload: boolean; type: 'TRANSPARENT_SIDE_NAV' }
-    | { payload: string; type: 'SIDE_NAV_COLOR' }
+    | { payload: 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'error' | 'dark'; type: 'SIDE_NAV_COLOR' }
     | { payload: boolean; type: 'TRANSPARENT_NAV' }
     | { payload: boolean; type: 'FIXED_NAVBAR' }
     | { payload: boolean; type: 'OPEN_CONFIGURATION' }

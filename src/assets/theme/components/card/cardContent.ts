@@ -1,3 +1,4 @@
+// Soft UI Dashboard React Helper Functions
 import pxToRem from '../../functions/pxToRem';
 
 const cardContent = {

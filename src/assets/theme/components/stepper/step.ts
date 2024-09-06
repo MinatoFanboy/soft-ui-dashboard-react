@@ -1,3 +1,4 @@
+// Soft UI Dashboard React helper functions
 import pxToRem from '../../functions/pxToRem';
 
 const step = {

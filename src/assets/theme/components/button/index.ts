@@ -1,7 +1,8 @@
-import buttonText from './text';
+// Soft UI Dashboard React Button Styles
+import root from './root';
 import contained from './contained';
 import outlined from './outlined';
-import root from './root';
+import buttonText from './text';
 
 const button = {
     defaultProps: {

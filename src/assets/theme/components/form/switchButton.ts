@@ -1,9 +1,12 @@
+// Soft UI Dashboard React base styles
+import colors from '../../base/colors';
 import borders from '../../base/borders';
 import boxShadows from '../../base/boxShadows';
-import colors from '../../base/colors';
-import linearGradient from '../../functions/linearGradient';
-import pxToRem from '../../functions/pxToRem';
+
+// Soft UI Dashboard React helper functions
 import rgba from '../../functions/rgba';
+import pxToRem from '../../functions/pxToRem';
+import linearGradient from '../../functions/linearGradient';
 
 const { white, light, gradients } = colors;
 const { borderWidth } = borders;

@@ -1,10 +1,12 @@
+// Soft UI Dashboard React Base Styles
 import colors from '../../base/colors';
 import typography from '../../base/typography';
 import boxShadows from '../../base/boxShadows';
 
+// Soft UI Dashboard React Helper Functions
 import pxToRem from '../../functions/pxToRem';
 
-const { info, light, secondary, transparent } = colors;
+const { transparent, light, info, secondary } = colors;
 const { size } = typography;
 const { buttonBoxShadow } = boxShadows;
 
@@ -12,19 +14,19 @@ const outlined = {
     base: {
         minHeight: pxToRem(42),
         color: light.main,
-        border: light.main,
+        borderColor: light.main,
         padding: `${pxToRem(12)} ${pxToRem(24)}`,
 
         '&:hover': {
-            backgroundColor: transparent.main,
             opacity: 0.75,
+            backgroundColor: transparent.main,
         },
 
         '&:focus:not(:hover)': {
             boxShadow: buttonBoxShadow.stateOfNotHover,
         },
 
-        '& .material-icon, .material-icon-round, svg': {
+        '& .material-icon, .material-icons-round, svg': {
             fontSize: `${pxToRem(16)} !important`,
         },
     },
@@ -34,7 +36,7 @@ const outlined = {
         padding: `${pxToRem(8)} ${pxToRem(32)}`,
         fontSize: size.xs,
 
-        '& .material-icon, .material-icon-round, svg': {
+        '& .material-icon, .material-icons-round, svg': {
             fontSize: `${pxToRem(12)} !important`,
         },
     },
@@ -44,7 +46,7 @@ const outlined = {
         padding: `${pxToRem(14)} ${pxToRem(64)}`,
         fontSize: size.sm,
 
-        '& .material-icon, .material-icon-round, svg': {
+        '& .material-icon, .material-icons-round, svg': {
             fontSize: `${pxToRem(22)} !important`,
         },
     },

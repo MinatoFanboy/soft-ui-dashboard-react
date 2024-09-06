@@ -1,6 +1,7 @@
+// Soft UI Dashboard React Base Styles
 import colors from './colors';
 
-const { dark, info } = colors;
+const { info, dark } = colors;
 
 const globals = {
     html: {
@@ -10,7 +11,7 @@ const globals = {
         margin: 0,
         padding: 0,
     },
-    'a, a:link: a:visited': {
+    'a, a:link, a:visited': {
         textDecoration: 'none !important',
     },
     'a.link, .link, a.link:link, .link:link, a.link:visited, .link:visited': {

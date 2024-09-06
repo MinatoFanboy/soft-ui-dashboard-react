@@ -1,6 +1,9 @@
+// Soft UI Dashboard React Base Styles
+import colors from '../../base/colors';
 import borders from '../../base/borders';
 import boxShadows from '../../base/boxShadows';
-import colors from '../../base/colors';
+
+// Soft UI Dashboard React Helper Function
 import rgba from '../../functions/rgba';
 
 const { black, white } = colors;
@@ -11,10 +14,10 @@ const card = {
     styleOverrides: {
         root: {
             display: 'flex',
-            flexDirection: 'column',
-            position: 'relative',
+            flexDirection: 'column' as const,
+            position: 'relative' as const,
             minWidth: 0,
-            wordWrap: 'break-word',
+            wordWrap: 'break-word' as const,
             backgroundColor: white.main,
             backgroundClip: 'border-box',
             border: `${borderWidth[0]} solid ${rgba(black.main, 0.125)}`,

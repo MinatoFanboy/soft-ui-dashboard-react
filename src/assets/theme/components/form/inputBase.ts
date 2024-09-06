@@ -1,6 +1,9 @@
-import borders from '../../base/borders';
+// Soft UI Dashboard React Base Styles
 import colors from '../../base/colors';
 import typography from '../../base/typography';
+import borders from '../../base/borders';
+
+// Soft UI Dashboard PRO helper functions
 import pxToRem from '../../functions/pxToRem';
 
 const { dark, white, grey, inputColors } = colors;
@@ -22,7 +25,8 @@ const inputBase = {
             backgroundColor: `${white.main} !important`,
             backgroundClip: 'padding-box !important',
             border: `${borderWidth[1]} solid ${inputColors.borderColor.main}`,
-            appearance: 'none !important',
+            appearance: 'none' as const,
+            WebkitAppearance: 'none' as const,
             borderRadius: borderRadius.md,
             transition: 'box-shadow 150ms ease, border-color 150ms ease, padding 150ms ease !important',
         },

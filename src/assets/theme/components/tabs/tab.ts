@@ -1,6 +1,9 @@
+// Soft UI Dashboard React base styles
+import typography from '../../base/typography';
 import borders from '../../base/borders';
 import colors from '../../base/colors';
-import typography from '../../base/typography';
+
+// Soft UI Dashboard React helper functions
 import pxToRem from '../../functions/pxToRem';
 
 const { size, fontWeightRegular } = typography;
@@ -12,15 +15,15 @@ const tab = {
         root: {
             display: 'flex',
             alignItems: 'center',
-            flexDirection: 'row',
+            flexDirection: 'row' as const,
             flex: '1 1 auto',
-            textAlign: 'center',
+            textAlign: 'center' as const,
             maxWidth: 'unset !important',
             minWidth: 'unset !important',
             minHeight: 'unset !important',
             fontSize: size.md,
             fontWeight: fontWeightRegular,
-            textTransform: 'none',
+            textTransform: 'none' as const,
             lineHeight: 'inherit',
             padding: pxToRem(4),
             borderRadius: borderRadius.md,

@@ -1,8 +1,12 @@
-import { Fade } from '@mui/material';
+// @mui material components
+import Fade from '@mui/material/Fade';
 
-import borders from '../base/borders';
+// Soft UI Dashboard React base styles
 import colors from '../base/colors';
 import typography from '../base/typography';
+import borders from '../base/borders';
+
+// Soft UI Dashboard React helper functions
 import pxToRem from '../functions/pxToRem';
 
 const { black, light } = colors;
@@ -22,7 +26,7 @@ const tooltip = {
             color: light.main,
             fontSize: size.sm,
             fontWeight: fontWeightRegular,
-            textAlign: 'center',
+            textAlign: 'center' as const,
             borderRadius: borderRadius.md,
             opacity: 0.7,
             padding: `${pxToRem(5)} ${pxToRem(8)} ${pxToRem(4)}`,

@@ -1,6 +1,6 @@
 const appBar = {
     defaultProps: {
-        color: 'transparent',
+        color: 'transparent' as const,
     },
 
     styleOverrides: {
