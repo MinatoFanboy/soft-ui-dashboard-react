@@ -1,3 +1,5 @@
+import { forwardRef } from 'react';
+
 // Custom styles for SoftBox
 import SoftBoxRoot from './SoftBoxRoot';
 import { BoxProps } from '@mui/material';
@@ -12,7 +14,7 @@ type SoftBoxProps<C extends React.ElementType> = {
     shadow?: string;
 } & BoxProps<C, { component?: C }>;
 
-const SoftBox = <C extends React.ElementType = 'div'>(props: SoftBoxProps<C>) => {
+const SoftBox = forwardRef(<C extends React.ElementType = 'div'>(props: SoftBoxProps<C>, ref: React.Ref<Element>) => {
     const {
         variant = 'contained',
         bgColor = 'transparent',
@@ -23,7 +25,7 @@ const SoftBox = <C extends React.ElementType = 'div'>(props: SoftBoxProps<C>) =>
         ...rest
     } = props;
 
-    return <SoftBoxRoot {...rest} ownerState={{ variant, bgColor, color, opacity, borderRadius, shadow }} />;
-};
+    return <SoftBoxRoot ref={ref} {...rest} ownerState={{ variant, bgColor, color, opacity, borderRadius, shadow }} />;
+});
 
 export default SoftBox;

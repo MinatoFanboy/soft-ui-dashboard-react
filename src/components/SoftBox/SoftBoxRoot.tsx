@@ -12,7 +12,7 @@ const SoftBoxRoot = styled(Box)<{
     };
 }>(({ theme, ownerState }) => {
     const { palette, functions, borders, boxShadows } = theme;
-    const { variant, bgColor, opacity, borderRadius, shadow } = ownerState;
+    const { variant, bgColor, color, opacity, borderRadius, shadow } = ownerState;
 
     const { gradients, grey, white } = palette;
     const { linearGradient } = functions;
@@ -92,11 +92,27 @@ const SoftBoxRoot = styled(Box)<{
     }
 
     // // color value
-    // let colorValue = color;
+    let colorValue = color;
 
-    // if (validColors.find((el) => el === color)) {
-    //     colorValue = palette[color] ? palette[color].main : greyColors[color];
-    // }
+    if (validColors.find((el) => el === color)) {
+        colorValue = palette[color as keyof typeof palette]
+            ? palette[
+                  color as
+                      | 'primary'
+                      | 'transparent'
+                      | 'black'
+                      | 'primary'
+                      | 'secondary'
+                      | 'info'
+                      | 'success'
+                      | 'warning'
+                      | 'error'
+                      | 'light'
+                      | 'dark'
+                      | 'text'
+              ].main || white.main
+            : greyColors[color as keyof typeof greyColors];
+    }
 
     // borderRadius value
     let borderRadiusValue = borderRadius;
@@ -115,6 +131,7 @@ const SoftBoxRoot = styled(Box)<{
     return {
         opacity,
         background: backgroundValue,
+        color: colorValue,
         borderRadius: borderRadiusValue,
         boxShadow: boxShadowValue,
     };
