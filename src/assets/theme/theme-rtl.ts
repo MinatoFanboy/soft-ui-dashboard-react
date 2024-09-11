@@ -128,6 +128,13 @@ declare module '@mui/material/styles' {
                 state: string;
             };
         };
+
+        inputColors: {
+            borderColor: { main: string; focus: string };
+            boxShadow: string;
+            error: string;
+            success: string;
+        };
     }
 
     interface PaletteOptions {
@@ -195,6 +202,13 @@ declare module '@mui/material/styles' {
                 main: string;
                 state: string;
             };
+        };
+
+        inputColors?: {
+            borderColor: { main: string; focus: string };
+            boxShadow: string;
+            error: string;
+            success: string;
         };
     }
 
