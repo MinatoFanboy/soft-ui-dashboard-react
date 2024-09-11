@@ -19,7 +19,7 @@ export const setTransparentNavbar = (dispatch: Dispatch<Action>, value: boolean)
 export const setFixedNavbar = (dispatch: Dispatch<Action>, value: boolean) =>
     dispatch({ payload: value, type: 'FIXED_NAVBAR' });
 
-export const setOpenConfigurator = (dispatch: Dispatch<Action>, value: boolean) =>
+export const setOpenConfiguration = (dispatch: Dispatch<Action>, value: boolean) =>
     dispatch({ payload: value, type: 'OPEN_CONFIGURATION' });
 
 export const setDirection = (dispatch: Dispatch<Action>, value: 'ltr' | 'rtl') =>

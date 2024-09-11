@@ -22,6 +22,8 @@ import list from './components/list';
 import listItem from './components/list/listItem';
 import listItemText from './components/list/listItemText';
 import card from './components/card';
+import cardMedia from './components/card/cardMedia';
+import cardContent from './components/card/cardContent';
 import button from './components/button';
 import iconButton from './components/iconButton';
 import inputBase from './components/form/inputBase';
@@ -196,6 +198,10 @@ declare module '@mui/material/styles' {
         };
     }
 
+    interface PaletteColor {
+        focus?: string;
+    }
+
     interface TypeText {
         main?: string;
         focus?: string;
@@ -203,6 +209,28 @@ declare module '@mui/material/styles' {
 
     interface TypographyOptions {
         lineHeight?: number;
+    }
+
+    interface TypographyVariants {
+        size: {
+            xxs: string;
+            xs: string;
+            sm: string;
+            md: string;
+            lg: string;
+            xl: string;
+        };
+    }
+
+    interface TypographyVariantsOptions {
+        size?: {
+            xxs: string;
+            xs: string;
+            sm: string;
+            md: string;
+            lg: string;
+            xl: string;
+        };
     }
 
     interface Theme {
@@ -345,6 +373,8 @@ export default createTheme({
         MuiListItem: { ...listItem },
         MuiListItemText: { ...listItemText },
         MuiCard: { ...card },
+        MuiCardMedia: { ...cardMedia },
+        MuiCardContent: { ...cardContent },
         MuiButton: { ...button },
         MuiIconButton: { ...iconButton },
         MuiInputBase: { ...inputBase },

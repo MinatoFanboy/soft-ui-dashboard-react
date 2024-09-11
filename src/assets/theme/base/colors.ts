@@ -9,8 +9,8 @@ const colors = {
     },
 
     transparent: {
-        main: 'transparent',
-        focus: 'transparent',
+        main: 'rgba(255, 255, 255, 0)',
+        focus: 'rgba(255, 255, 255, 0)',
     },
 
     white: {
