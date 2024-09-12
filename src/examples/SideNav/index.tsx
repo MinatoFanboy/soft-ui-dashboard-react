@@ -25,15 +25,15 @@ import { setMiniSideNav } from '~/context';
 import { IRoute } from '~/types';
 
 interface SideNavProps {
-    color: 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'error' | 'dark';
-    brand: string;
+    color?: 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'error' | 'dark';
+    brand?: string;
     brandName: string;
     routes: IRoute[];
-    onMouseEnter: () => void;
-    onMouseLeave: () => void;
+    onMouseEnter?: () => void;
+    onMouseLeave?: () => void;
 }
 
-const SideNav: FC<SideNavProps> = ({ color, brand, brandName, routes, ...rest }) => {
+const SideNav: FC<SideNavProps> = ({ color = 'info', brand = '', brandName, routes, ...rest }) => {
     const { dispatch, state } = useController();
     const { transparentSideNav, miniSideNav } = state;
     const location = useLocation();

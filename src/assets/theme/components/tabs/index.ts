@@ -27,7 +27,7 @@ const tabs = {
         },
 
         fixed: {
-            overflow: 'unset' as const,
+            overflow: 'unset !important' as const,
             WebkitOverflow: 'unset' as const,
             overflowX: 'unset' as const,
             WebkitOverflowX: 'unset' as const,

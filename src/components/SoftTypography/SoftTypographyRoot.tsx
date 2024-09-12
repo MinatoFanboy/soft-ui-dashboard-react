@@ -56,7 +56,7 @@ const SoftTypographyRoot = styled(Typography)<{
         display: 'inline-block',
         WebkitBackgroundClip: 'text',
         WebkitTextFillColor: transparent.main,
-        position: 'relative',
+        position: 'relative' as const,
         zIndex: 1,
     });
 
@@ -67,7 +67,7 @@ const SoftTypographyRoot = styled(Typography)<{
         textDecoration: 'none',
         color: color === 'inherit' || !palette[color] ? 'inherit' : palette[color].main,
         fontWeight: fontWeight ? fontWeights[fontWeight] : undefined,
-        ...(textGradient && gradientStyles),
+        ...(textGradient && gradientStyles()),
     };
 });
 
