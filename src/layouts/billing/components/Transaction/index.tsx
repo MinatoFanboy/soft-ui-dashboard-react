@@ -1,0 +1,46 @@
+import { ReactNode } from 'react';
+
+// @mui material components
+import Icon from '@mui/material/Icon';
+
+// Soft UI Dashboard React components
+import SoftBox from '~/components/SoftBox';
+import SoftTypography from '~/components/SoftTypography';
+import SoftButton from '~/components/SoftButton';
+
+interface TransactionProps {
+    color: 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'error' | 'light' | 'dark';
+    icon: ReactNode;
+    name: string;
+    description: string;
+    value: string;
+}
+
+function Transaction({ color, icon, name, description, value }: TransactionProps) {
+    return (
+        <SoftBox key={name} component={'li'} py={1} pr={2} mb={1}>
+            <SoftBox display={'flex'} justifyContent={'space-between'} alignItems={'center'}>
+                <SoftBox display={'flex'} alignItems={'center'}>
+                    <SoftBox mr={2}>
+                        <SoftButton variant={'outlined'} color={color} size={'small'} iconOnly circular>
+                            <Icon sx={{ fontWeight: 'bold' }}>{icon}</Icon>
+                        </SoftButton>
+                    </SoftBox>
+                    <SoftBox display={'flex'} flexDirection={'column'}>
+                        <SoftTypography variant={'button'} fontWeight={'medium'} gutterBottom>
+                            {name}
+                        </SoftTypography>
+                        <SoftTypography variant={'caption'} color={'text'}>
+                            {description}
+                        </SoftTypography>
+                    </SoftBox>
+                </SoftBox>
+                <SoftTypography variant={'button'} color={color} fontWeight={'medium'} textGradient>
+                    {value}
+                </SoftTypography>
+            </SoftBox>
+        </SoftBox>
+    );
+}
+
+export default Transaction;

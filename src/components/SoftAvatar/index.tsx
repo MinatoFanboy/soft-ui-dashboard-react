@@ -1,3 +1,5 @@
+import { forwardRef } from 'react';
+
 import { AvatarProps } from '@mui/material';
 
 // Custom styles for SoftAvatar
@@ -9,15 +11,11 @@ interface SoftAvatarProps extends AvatarProps {
     shadow?: 'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'inset';
 }
 
-const SoftAvatar = ({ bgColor = 'transparent', size = 'md', shadow = 'none', ...rest }: SoftAvatarProps) => (
-    <SoftAvatarRoot ownerState={{ shadow, bgColor, size }} {...rest} />
+const SoftAvatar = forwardRef(
+    (
+        { bgColor = 'transparent', size = 'md', shadow = 'none', ...rest }: SoftAvatarProps,
+        ref: React.Ref<HTMLDivElement>,
+    ) => <SoftAvatarRoot ref={ref} ownerState={{ shadow, bgColor, size }} {...rest} />,
 );
-
-// Setting default values for the props of SoftAvatar
-SoftAvatar.defaultProps = {
-    bgColor: 'transparent',
-    size: 'md',
-    shadow: 'none',
-};
 
 export default SoftAvatar;

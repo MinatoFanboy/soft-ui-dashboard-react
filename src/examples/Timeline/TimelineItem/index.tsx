@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useContext } from 'react';
 
 // @mui material components
 import { Icon, Theme } from '@mui/material';
@@ -9,7 +9,7 @@ import SoftTypography from '~/components/SoftTypography';
 import SoftBadge from '~/components/SoftBadge';
 
 // Timeline context
-import { useTimeline } from '../context';
+import { Timeline } from '../context';
 
 // Custom styles for the TimelineItem
 import { timelineItem, timelineItemIcon } from './styles';
@@ -33,7 +33,7 @@ function TimelineItem({
     badges = [],
     lastItem = false,
 }: TimelineItemProps) {
-    const isDark = useTimeline();
+    const isDark = useContext(Timeline);
 
     const renderBadges =
         badges.length > 0
@@ -42,7 +42,7 @@ function TimelineItem({
 
                   return (
                       <SoftBox key={badgeKey} mr={key === badges.length - 1 ? 0 : 0.5}>
-                          <SoftBadge color={color} size="xs" badgeContent={badge} container />
+                          <SoftBadge color={color as any} size={'xs'} badgeContent={badge} container />
                       </SoftBox>
                   );
               })

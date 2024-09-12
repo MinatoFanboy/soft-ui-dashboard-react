@@ -1,5 +1,5 @@
 // @mui material components
-import { Card, Icon } from '@mui/material';
+import { Card, Icon, Theme } from '@mui/material';
 
 // Soft UI Dashboard React components
 import SoftBox from '~/components/SoftBox';
@@ -20,7 +20,7 @@ function WorkWithTheRockets() {
                     px={2}
                     borderRadius={'lg'}
                     sx={{
-                        backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
+                        backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }: Theme) =>
                             `${linearGradient(
                                 rgba(gradients.dark.main, 0.8),
                                 rgba(gradients.dark.state, 0.8),
@@ -41,6 +41,7 @@ function WorkWithTheRockets() {
                     </SoftBox>
                     <SoftTypography
                         component={'a'}
+                        href={'#'}
                         variant={'button'}
                         color={'white'}
                         fontWeight={'medium'}

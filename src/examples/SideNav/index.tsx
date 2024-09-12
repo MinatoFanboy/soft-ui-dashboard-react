@@ -1,10 +1,10 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 
 // react-router-dom components
 import { useLocation, NavLink } from 'react-router-dom';
 
 // @mui material components
-import { Divider, Icon, Link, List } from '@mui/material';
+import { Divider, Icon, Link, List, Theme } from '@mui/material';
 
 // Soft UI Dashboard React components
 import SoftBox from '~/components/SoftBox';
@@ -41,6 +41,24 @@ const SideNav: FC<SideNavProps> = ({ color, brand, brandName, routes, ...rest })
     const collapseName = pathname.split('/').slice(1)[0];
 
     const closeSideNav = () => setMiniSideNav(dispatch, true);
+
+    useEffect(() => {
+        // A function that sets the mini state of the sideNav.
+        function handleMiniSideNav() {
+            setMiniSideNav(dispatch, window.innerWidth < 1200);
+        }
+
+        /** 
+            The event listener that's calling the handleMiniSideNav function when resizing the window.
+        */
+        window.addEventListener('resize', handleMiniSideNav);
+
+        // Call the handleMiniSideNav function to set the state with the initial value.
+        handleMiniSideNav();
+
+        // Remove event listener on cleanup
+        return () => window.removeEventListener('resize', handleMiniSideNav);
+    }, [dispatch, location]);
 
     // Render all the routes from the routes.js (All the visible items on the SideNav)
     const renderRoutes = routes.map(({ type, name, icon, title, noCollapse, key, route, href }) => {
@@ -114,7 +132,7 @@ const SideNav: FC<SideNavProps> = ({ color, brand, brandName, routes, ...rest })
                     {brand && <SoftBox component={'img'} src={brand} alt={'Soft UI Logo'} width={'2rem'} />}
                     <SoftBox
                         width={!brandName ? '100%' : undefined}
-                        sx={(theme) => sideNavLogoLabel(theme, { miniSideNav })}
+                        sx={(theme: Theme) => sideNavLogoLabel(theme, { miniSideNav })}
                     >
                         <SoftTypography component={'h6'} variant={'button'} fontWeight={'medium'}>
                             {brandName}

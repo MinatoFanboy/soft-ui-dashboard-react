@@ -4,7 +4,7 @@ import { TypographyProps } from '@mui/material';
 // Custom styles for SoftTypography
 import SoftTypographyRoot from './SoftTypographyRoot';
 
-interface SoftTypographyProps extends TypographyProps {
+type SoftTypographyProps<C extends React.ElementType> = {
     color?:
         | 'inherit'
         | 'primary'
@@ -23,24 +23,28 @@ interface SoftTypographyProps extends TypographyProps {
     textGradient?: boolean;
     children: ReactNode;
     opacity?: number;
-}
+} & TypographyProps<C, { component?: C }>;
 
-const SoftTypography = ({
-    color = 'dark',
-    fontWeight = undefined,
-    textTransform = 'none',
-    verticalAlign = 'unset',
-    textGradient = false,
-    opacity = 1,
-    children,
-    ...rest
-}: SoftTypographyProps) => (
-    <SoftTypographyRoot
-        {...rest}
-        ownerState={{ color, textTransform, verticalAlign, fontWeight, opacity, textGradient }}
-    >
-        {children}
-    </SoftTypographyRoot>
-);
+const SoftTypography = <C extends React.ElementType = 'span'>(props: SoftTypographyProps<C>) => {
+    const {
+        color = 'dark',
+        fontWeight = undefined,
+        textTransform = 'none',
+        verticalAlign = 'unset',
+        textGradient = false,
+        opacity = 1,
+        children,
+        ...rest
+    } = props;
+
+    return (
+        <SoftTypographyRoot
+            {...rest}
+            ownerState={{ color, textTransform, verticalAlign, fontWeight, opacity, textGradient }}
+        >
+            {children}
+        </SoftTypographyRoot>
+    );
+};
 
 export default SoftTypography;

@@ -1,18 +1,31 @@
+import { ReactNode } from 'react';
+import { BadgeProps } from '@mui/material';
+
 // Custom styles for the SoftBadge
 import SoftBadgeRoot from './SoftBadgeRoot';
 
-interface SoftBadgeProps {
+type SoftBadgeProps = {
     color?: 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'error' | 'light' | 'dark';
     variant?: 'gradient' | 'contained';
-    size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg']),
-    circular: PropTypes.bool,
-    indicator: PropTypes.bool,
-    border: PropTypes.bool,
-    children: PropTypes.node,
-    container: PropTypes.bool,
-}
+    size?: 'xs' | 'sm' | 'md' | 'lg';
+    circular?: boolean;
+    indicator?: boolean;
+    border?: boolean;
+    children?: ReactNode | boolean;
+    container?: boolean;
+} & BadgeProps;
 
-const SoftBadge = ({ color, variant, size, circular, indicator, border, container, children, ...rest }) => (
+const SoftBadge = ({
+    color = 'info',
+    variant = 'gradient' as never,
+    size = 'sm',
+    circular = false,
+    indicator = false,
+    border = false,
+    container = false,
+    children = false,
+    ...rest
+}: SoftBadgeProps) => (
     <SoftBadgeRoot
         {...rest}
         ownerState={{ color, variant, size, circular, indicator, border, container, children }}
@@ -21,17 +34,5 @@ const SoftBadge = ({ color, variant, size, circular, indicator, border, containe
         {children}
     </SoftBadgeRoot>
 );
-
-// Setting default values for the props of SoftBadge
-SoftBadge.defaultProps = {
-    color: 'info',
-    variant: 'gradient',
-    size: 'sm',
-    circular: false,
-    indicator: false,
-    border: false,
-    children: false,
-    container: false,
-};
 
 export default SoftBadge;

@@ -56,8 +56,7 @@ const App: FC = () => {
             setMiniSideNav(dispatch, false);
             setOnMouseEnter(true);
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [miniSideNav, onMouseEnter]);
+    }, [dispatch, miniSideNav, onMouseEnter]);
 
     // Close sideNav when mouse leave mini sideNav
     const handleOnMouseLeave = useCallback(() => {
@@ -65,14 +64,12 @@ const App: FC = () => {
             setMiniSideNav(dispatch, true);
             setOnMouseEnter(false);
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [onMouseEnter]);
+    }, [dispatch, onMouseEnter]);
 
     // Change the openConfiguration state
     const handleConfigurationOpen = useCallback(
         () => setOpenConfiguration(dispatch, !openConfiguration),
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        [openConfiguration],
+        [dispatch, openConfiguration],
     );
 
     const getRoutes = (allRoutes: IRoute[]) =>

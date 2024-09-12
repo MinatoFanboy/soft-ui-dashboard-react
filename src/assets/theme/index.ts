@@ -135,6 +135,48 @@ declare module '@mui/material/styles' {
             error: string;
             success: string;
         };
+
+        badgeColors: {
+            primary: {
+                background: string;
+                text: string;
+            };
+
+            secondary: {
+                background: string;
+                text: string;
+            };
+
+            info: {
+                background: string;
+                text: string;
+            };
+
+            success: {
+                background: string;
+                text: string;
+            };
+
+            warning: {
+                background: string;
+                text: string;
+            };
+
+            error: {
+                background: string;
+                text: string;
+            };
+
+            light: {
+                background: string;
+                text: string;
+            };
+
+            dark: {
+                background: string;
+                text: string;
+            };
+        };
     }
 
     interface PaletteOptions {
@@ -209,6 +251,48 @@ declare module '@mui/material/styles' {
             boxShadow: string;
             error: string;
             success: string;
+        };
+
+        badgeColors?: {
+            primary: {
+                background: string;
+                text: string;
+            };
+
+            secondary: {
+                background: string;
+                text: string;
+            };
+
+            info: {
+                background: string;
+                text: string;
+            };
+
+            success: {
+                background: string;
+                text: string;
+            };
+
+            warning: {
+                background: string;
+                text: string;
+            };
+
+            error: {
+                background: string;
+                text: string;
+            };
+
+            light: {
+                background: string;
+                text: string;
+            };
+
+            dark: {
+                background: string;
+                text: string;
+            };
         };
     }
 
