@@ -2,11 +2,11 @@
 import { createTheme } from '@mui/material/styles';
 
 // Soft UI Dashboard React base styles
-import colors from './/base/colors';
-import breakpoints from './/base/breakpoints';
-import typography from './/base/typography';
-import boxShadows from './/base/boxShadows';
-import borders from './/base/borders';
+import colors from './base/colors';
+import breakpoints from './base/breakpoints';
+import typography from './base/typography';
+import boxShadows from './base/boxShadows';
+import borders from './base/borders';
 
 // Soft UI Dashboard React helper functions
 import boxShadow from './functions/boxShadow';

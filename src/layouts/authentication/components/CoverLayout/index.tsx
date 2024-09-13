@@ -51,7 +51,7 @@ const CoverContainer: FC<CoverLayoutProps> = ({
                     margin: 0,
                 }}
             >
-                <Grid size={{ sm: 8, md: 5, xl: 3 }}>
+                <Grid size={{ sm: 8, md: 5, xl: 3, xs: 11 }}>
                     <SoftBox mt={top}>
                         <SoftBox pt={3} px={3}>
                             {!header ? (

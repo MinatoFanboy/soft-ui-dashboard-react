@@ -70,7 +70,9 @@ const BasicContainer: FC<BasicContainerProps> = ({ title = '', description = '',
             </SoftBox>
             <SoftBox mt={{ xs: -26, lg: -24 }} px={1} width={'calc(100% - 2rem)'} mx={'auto'}>
                 <Grid container spacing={1} justifyContent={'center'}>
-                    <Grid size={{ xs: 11, sm: 9, md: 5, lg: 4, xl: 3 }}>{children}</Grid>
+                    <Grid size={{ xs: 11, sm: 9, md: 5, lg: 4, xl: 3 }} pt={1}>
+                        {children}
+                    </Grid>
                 </Grid>
             </SoftBox>
             <Footer />

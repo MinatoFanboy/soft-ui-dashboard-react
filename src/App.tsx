@@ -121,7 +121,7 @@ const App: FC = () => {
         }
     }, [pathname]);
 
-    const _renderMainLayout = useMemo(() => {
+    const _renderMainLayout = () => {
         return (
             <>
                 <CssBaseline />
@@ -145,14 +145,14 @@ const App: FC = () => {
                 </Routes>
             </>
         );
-    }, [configsButton, layout, sideNavColor, handleOnMouseEnter, handleOnMouseLeave]);
+    };
 
     return direction === 'rtl' ? (
         <CacheProvider value={rtlCache}>
-            <ThemeProvider theme={themeRTL}>{_renderMainLayout}</ThemeProvider>
+            <ThemeProvider theme={themeRTL}>{_renderMainLayout()}</ThemeProvider>
         </CacheProvider>
     ) : (
-        <ThemeProvider theme={theme}>{_renderMainLayout}</ThemeProvider>
+        <ThemeProvider theme={theme}>{_renderMainLayout()}</ThemeProvider>
     );
 };
 

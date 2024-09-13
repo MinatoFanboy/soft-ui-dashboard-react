@@ -22,7 +22,7 @@ function Projects() {
 
     const renderMenu = (
         <Menu
-            id="simple-menu"
+            id={'simple-menu'}
             anchorEl={menu}
             anchorOrigin={{
                 vertical: 'top',

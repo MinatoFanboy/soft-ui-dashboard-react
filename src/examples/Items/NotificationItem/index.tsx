@@ -1,7 +1,7 @@
 import { FC, ReactNode } from 'react';
 
 // @mui material components
-import { Icon, MenuItem, MenuItemProps } from '@mui/material';
+import { Icon, MenuItem, MenuItemProps, Theme } from '@mui/material';
 
 // Soft UI Dashboard React components
 import SoftBox from '~/components/SoftBox';
@@ -26,7 +26,7 @@ const NotificationItem: FC<NotificationItemProps> = ({ color = 'dark', image, ti
             mr={2}
             mb={0.25}
             borderRadius={'lg'}
-            sx={(theme) => menuImage(theme, { color })}
+            sx={(theme: Theme) => menuImage(theme, { color })}
         >
             {image}
         </SoftBox>

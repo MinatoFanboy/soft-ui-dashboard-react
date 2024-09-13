@@ -4,7 +4,7 @@ import { FC, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 // @material-ui core components
-import { AppBar, Icon, IconButton, Menu, Toolbar } from '@mui/material';
+import { AppBar, Icon, IconButton, Menu, Theme, Toolbar } from '@mui/material';
 
 // Soft UI Dashboard React components
 import SoftBox from '~/components/SoftBox';
@@ -119,12 +119,12 @@ const DashboardNavbar: FC<DashboardNavbarProps> = ({ absolute = false, light = f
             sx={(theme) => navbar(theme, { absolute, light, transparentNav })}
         >
             <Toolbar sx={(theme) => navbarContainer(theme)}>
-                <SoftBox color={'inherit'} mb={{ xs: 1, md: 0 }} sx={(theme) => navbarRow(theme, { isMini })}>
+                <SoftBox color={'inherit'} mb={{ xs: 1, md: 0 }} sx={(theme: Theme) => navbarRow(theme, { isMini })}>
                     <Breadcrumbs icon={'home'} title={route[route.length - 1]} route={route} light={light} />
                 </SoftBox>
 
                 {isMini ? null : (
-                    <SoftBox sx={(theme) => navbarRow(theme, { isMini })}>
+                    <SoftBox sx={(theme: Theme) => navbarRow(theme, { isMini })}>
                         <SoftBox pr={1}>
                             <SoftInput placeholder={'Type here...'} icon={{ component: 'search', direction: 'left' }} />
                         </SoftBox>
